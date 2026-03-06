@@ -1,17 +1,17 @@
 %
-O1007 (TAKUMI H12E TOOL UNLOAD)
+O1007 (KITAMURA BRIDGE 6G TOOL UNLOAD)
 
 (CYCLE THROUGH TOOLS FOR SEQUENTIAL UNLOADING)
-(LAST UPDATE 3/4/26 - SN)
+(LAST UPDATE 3/6/26 - SN)
 
-#30 = 29    (TOOL COUNT - DO NOT INCLUDE PROBE)
+#30 = 39    (TOOL COUNT - DO NOT INCLUDE PROBE)
 #31 = 1     (STARTING TOOL)
 
 (SPINDLE AT OP WINDOW COORDINATES)
 (USE MACHINE COORDINATES ONLY)
-#10 = -0.802    (MACHINE POS X)
-#11 = -36.90    (MACHINE POS Y)
-#12 = -0.250    (MACHINE POS Z)
+#10 = -1.7555    (MACHINE POS X)
+#11 = -42.000    (MACHINE POS Y)
+#12 = -3.5000    (MACHINE POS Z)
 
 
 (---------------------------)
@@ -32,10 +32,10 @@ N100
     G0 G53 Z[#12]               (SPINDLE TO WINDOW)
     M00                         (PAUSE FOR TOOL UNLOAD)
     
-    #[13000+#31] = 0.           (CLEAR RADIUS)
-    #[12000+#31] = 0.           (CLEAR RADIUS WEAR)
-    #[11000+#31] = 0.           (CLEAR LENGTH)
-    #[10000+#31] = 0.           (CLEAR LENGTH WEAR)
+    #[2400+#31] = 0.            (CLEAR RADIUS)
+    #[2600+#31] = 0.            (CLEAR RADIUS WEAR)
+    #[2000+#31] = 0.            (CLEAR LENGTH)
+    #[2200+#31] = 0.            (CLEAR LENGTH WEAR)
 
     IF [#31 GE #30] GOTO 200    (CHECK IF LAST TOOL)
     #31 = #31 + 1               (INCREMENT TOOL NUMBER)
